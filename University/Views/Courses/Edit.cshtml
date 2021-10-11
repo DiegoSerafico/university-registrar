@@ -1,19 +1,22 @@
+
 @{
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category
+@model University.Models.Course
 
 <h2>Edit</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this Course: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CategoryId)
+  @Html.HiddenFor(model => model.CourseId)
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.CourseNumber)
+  @Html.EditorFor(model => model.CourseNumber)
 
   <input type="submit" value="Save" />
 }

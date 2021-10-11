@@ -1,23 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using University.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoList.Controllers
+namespace University.Controllers
 {
-  public class CategoriesController : Controller
+  public class CoursesController : Controller
   {
-    private readonly ToDoListContext _db;
+    private readonly UniversityContext _db;
 
-    public CategoriesController(ToDoListContext db)
+    public CoursesController(UniversityContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Course> model = _db.Courses.ToList();
       return View(model);
     }
 
@@ -27,46 +27,46 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Course course)
     {
-      _db.Categories.Add(category);
+      _db.Courses.Add(course);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      var thisCategory = _db.Categories
-          .Include(category => category.JoinEntities)
-          .ThenInclude(join => join.Item)
-          .FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisCourse = _db.Courses
+          .Include(course => course.JoinEntities)
+          .ThenInclude(join => join.Student)
+          .FirstOrDefault(course => course.CourseId == id);
+      return View(thisCourse);
     }
     public ActionResult Edit(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      return View(thisCourse);
     }
 
     [HttpPost]
-    public ActionResult Edit(Category category)
+    public ActionResult Edit(Course course)
     {
-      _db.Entry(category).State = EntityState.Modified;
+      _db.Entry(course).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      return View(thisCourse);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      _db.Categories.Remove(thisCategory);
+      var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      _db.Courses.Remove(thisCourse);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

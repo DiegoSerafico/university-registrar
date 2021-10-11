@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace University.Models
 {
-  public class Item
+  public class Student
   {
-    public Item()
+    public Student()
     {
-      this.JoinEntities = new HashSet<CategoryItem>();
+      this.JoinEntities = new HashSet<CourseStudent>();
     }
 
-    public int ItemId { get; set; }
-    public string Description { get; set; }
+    public int StudentId { get; set; }
+    public string Name { get; set; }
+    public string Date { get; set; }
 
-    public virtual ICollection<CategoryItem> JoinEntities { get;}
+    public virtual ICollection<CourseStudent> JoinEntities { get;}
   }
 }

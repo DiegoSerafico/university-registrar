@@ -1,11 +1,11 @@
-namespace ToDoList.Models
+namespace University.Models
 {
-  public class CategoryItem
+  public class CourseStudent
   {       
-    public int CategoryItemId { get; set; }
-    public int ItemId { get; set; }
-    public int CategoryId { get; set; }
-    public virtual Item Item { get; set; }
-    public virtual Category Category { get; set; }
+    public int CourseStudentId { get; set; }
+    public int StudentId { get; set; }
+    public int CourseId { get; set; }
+    public virtual Student Student { get; set; }
+    public virtual Course Course { get; set; }
   }
 }

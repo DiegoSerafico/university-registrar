@@ -2,27 +2,27 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category;
+@model University.Models.Course;
 
-<h2>Category Details</h2>
+<h2>Course Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) | @Html.DisplayFor(model => model.CourseNumber)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This category does not contain any items</p>
+  <p>This Course does not contain any students</p>
 }
 else
 {
-  <h4>Items the category contains:</h4>
+  <h4>Students the Course contains:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Item.Description</li>
+    <li>@join.Student.Name</li>
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Back to categories", "Index")</p>
-<p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
-<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
+<p>@Html.ActionLink("Back to courses", "Index")</p>
+<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
+<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>

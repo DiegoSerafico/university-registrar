@@ -5823,19 +5823,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Becket\\.nuget\\packages\\": {}
+    "C:\\Users\\diego\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Becket\\Desktop\\ToDoList.Solutions\\ToDoList\\ToDoList.csproj",
-      "projectName": "ToDoList",
-      "projectPath": "C:\\Users\\Becket\\Desktop\\ToDoList.Solutions\\ToDoList\\ToDoList.csproj",
-      "packagesPath": "C:\\Users\\Becket\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Becket\\Desktop\\ToDoList.Solutions\\ToDoList\\obj\\",
+      "projectUniqueName": "C:\\Users\\diego\\OneDrive\\Desktop\\epicodus\\c\\University\\University\\University.csproj",
+      "projectName": "University",
+      "projectPath": "C:\\Users\\diego\\OneDrive\\Desktop\\epicodus\\c\\University\\University\\University.csproj",
+      "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\diego\\OneDrive\\Desktop\\epicodus\\c\\University\\University\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Becket\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5896,7 +5896,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

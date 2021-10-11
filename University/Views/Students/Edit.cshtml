@@ -2,21 +2,24 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model University.Models.Student
 
 <h2>Edit</h2>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.ItemId)
+  @Html.HiddenFor(model => model.StudentId)
 
-  @Html.LabelFor(model => model.Description)
-  @Html.EditorFor(model => model.Description)
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
 
-  @Html.Label("Select category")
-  @Html.DropDownList("CategoryId")
+   @Html.LabelFor(model => model.Date)
+  @Html.EditorFor(model => model.Date)
+
+  @Html.Label("Select Course")
+  @Html.DropDownList("CourseId")
 
   <input type="submit" value="Save" />
 }
